@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes';
 import recipeRoutes from './routes/recipeRoutes';
+import mealPlanRoutes from './routes/mealplanRoutes';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/recipes', recipeRoutes);
+app.use('/api/mealplan', mealPlanRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
