@@ -1,10 +1,20 @@
 # 🍽️ MealMuse — Personal Meal Planning Companion
 
-A full-stack web application for discovering recipes, planning weekly meals, and auto-generating shopping lists, built with React, Node.js, Express and PostgreSQL.
+A full-stack web application for discovering recipes, planning weekly meals and auto-generating shopping lists, built with **React**, **Node.js**, **Express** and **PostgreSQL**.
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+---
 
 ## 📋 Overview
 
 MealMuse is a modern meal planning platform that helps users discover new recipes, save their favorites, organize weekly meals with a visual calendar, and automatically generate shopping lists based on their meal plan.
+
+---
 
 ## ✨ Features
 
@@ -36,10 +46,12 @@ MealMuse is a modern meal planning platform that helps users discover new recipe
 - JWT-based authentication
 - Protected routes — each user sees only their own data
 
+---
+
 ## 🧱 Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
+|---|---|
 | Frontend | React + Vite + TypeScript |
 | Styling | Tailwind CSS |
 | Backend | Node.js + Express + TypeScript |
@@ -47,12 +59,17 @@ MealMuse is a modern meal planning platform that helps users discover new recipe
 | External API | Spoonacular Food API |
 | Auth | JWT + bcrypt |
 
+---
+
 ## 🗄️ Database
 
 Key models:
+
 - `User` — registered users with hashed passwords
 - `MealPlan` — meal entries linked to user, date, meal type and recipe ID
 - `Favorite` — saved recipes per user
+
+---
 
 ## 🚀 Getting Started
 
@@ -109,6 +126,10 @@ npm run dev
 
 Client runs on `http://localhost:5173`
 
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
 ## 📁 Project Structure
 ```
 recipe-app/
@@ -131,6 +152,9 @@ recipe-app/
 └── README.md
 ```
 
+---
+
 ## 👤 Author
 
-Vukašin Riznić — [github.com/vukasinriznic](https://github.com/vukasinriznic)
+**Vukašin Riznić**
+[github.com/vukasinriznic](https://github.com/vukasinriznic)
