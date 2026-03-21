@@ -1,73 +1,136 @@
-# React + TypeScript + Vite
+# 🍽️ MealMuse — Personal Meal Planning Companion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application for discovering recipes, planning weekly meals, and auto-generating shopping lists, built with React, Node.js, Express and PostgreSQL.
 
-Currently, two official plugins are available:
+## 📋 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+MealMuse is a modern meal planning platform that helps users discover new recipes, save their favorites, organize weekly meals with a visual calendar, and automatically generate shopping lists based on their meal plan.
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔍 Recipe Discovery
+- Search from thousands of recipes powered by Spoonacular API
+- Filter by cuisine (Italian, Mexican, Asian, Mediterranean, American)
+- Filter by diet (Vegetarian, Vegan, Gluten Free, Ketogenic)
+- View detailed recipe information including ingredients and instructions
 
-## Expanding the ESLint configuration
+### ❤️ Favorites
+- Save recipes to your personal favorites list
+- Quick access to all saved recipes
+- Remove recipes from favorites with one click
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📅 Weekly Meal Planner
+- Visual weekly calendar (Monday to Sunday)
+- Plan Breakfast, Lunch and Dinner for each day
+- Add recipes directly from search to any meal slot
+- Remove meals from the planner
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛒 Shopping List
+- Auto-generated shopping list based on your weekly meal plan
+- Ingredients are automatically merged and quantities combined
+- Check off items as you shop
+- Visual progress tracker
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 👤 Authentication
+- Secure user registration and login
+- JWT-based authentication
+- Protected routes — each user sees only their own data
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧱 Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React + Vite + TypeScript |
+| Styling | Tailwind CSS |
+| Backend | Node.js + Express + TypeScript |
+| Database | PostgreSQL + Prisma ORM |
+| External API | Spoonacular Food API |
+| Auth | JWT + bcrypt |
+
+## 🗄️ Database
+
+Key models:
+- `User` — registered users with hashed passwords
+- `MealPlan` — meal entries linked to user, date, meal type and recipe ID
+- `Favorite` — saved recipes per user
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js >= 18
+- PostgreSQL
+- Spoonacular API key (free at [spoonacular.com](https://spoonacular.com/food-api))
+
+### Installation
+```bash
+# 1. Clone the repository
+git clone https://github.com/vukasinriznic/recipe-app.git
+cd recipe-app
+
+# 2. Install server dependencies
+cd server
+npm install
+
+# 3. Install client dependencies
+cd ../client
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Backend Setup
+```bash
+cd server
 ```
+
+Create a `.env` file in the `server/` folder:
+```env
+DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/mealmuse"
+PORT=5000
+JWT_SECRET=your_jwt_secret_here
+SPOONACULAR_API_KEY=your_spoonacular_api_key_here
+```
+
+Run database migrations:
+```bash
+npx prisma migrate dev
+```
+
+Start the backend server:
+```bash
+npm run dev
+```
+
+Server runs on `http://localhost:5000`
+
+### Frontend Setup
+```bash
+cd client
+npm run dev
+```
+
+Client runs on `http://localhost:5173`
+
+## 📁 Project Structure
+```
+recipe-app/
+├── client/                   # React frontend
+│   ├── src/
+│   │   ├── components/       # Navbar, Footer, RecipeModal
+│   │   ├── context/          # Auth context
+│   │   ├── pages/            # Login, Register, Recipes, MealPlan, Favorites, ShoppingList
+│   │   ├── services/         # API calls (axios)
+│   │   └── types/            # TypeScript interfaces
+│   └── ...
+├── server/                   # Express backend
+│   ├── src/
+│   │   ├── controllers/      # authController, recipeController, mealPlanController
+│   │   ├── middleware/        # JWT auth middleware
+│   │   └── routes/           # auth, recipe, mealPlan routes
+│   ├── prisma/
+│   │   └── schema.prisma     # Database schema
+│   └── ...
+└── README.md
+```
+
+## 👤 Author
+
+Vukašin Riznić — [github.com/vukasinriznic](https://github.com/vukasinriznic)

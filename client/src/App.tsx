@@ -8,6 +8,7 @@ import RecipesPage from './pages/RecipesPage';
 import FavoritesPage from './pages/FavoritesPage';
 import MealPlanPage from './pages/MealPlanPage';
 import ShoppingListPage from './pages/ShoppingListPage';
+import Footer from './components/Footer';
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated } = useAuth();
@@ -16,18 +17,21 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
 
 const AppRoutes = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/recipes" element={<PrivateRoute><RecipesPage /></PrivateRoute>} />
-        <Route path="/favorites" element={<PrivateRoute><FavoritesPage /></PrivateRoute>} />
-        <Route path="/meal-plan" element={<PrivateRoute><MealPlanPage /></PrivateRoute>} />
-        <Route path="/shopping-list" element={<PrivateRoute><ShoppingListPage /></PrivateRoute>} />
-        <Route path="/" element={<Navigate to="/recipes" />} />
-      </Routes>
-    </>
+      <main className="flex-1">
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/recipes" element={<PrivateRoute><RecipesPage /></PrivateRoute>} />
+          <Route path="/favorites" element={<PrivateRoute><FavoritesPage /></PrivateRoute>} />
+          <Route path="/meal-plan" element={<PrivateRoute><MealPlanPage /></PrivateRoute>} />
+          <Route path="/shopping-list" element={<PrivateRoute><ShoppingListPage /></PrivateRoute>} />
+          <Route path="/" element={<Navigate to="/recipes" />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
