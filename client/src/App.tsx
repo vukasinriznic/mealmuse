@@ -16,6 +16,8 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
 };
 
 const AppRoutes = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -30,7 +32,7 @@ const AppRoutes = () => {
           <Route path="/" element={<Navigate to="/recipes" />} />
         </Routes>
       </main>
-      <Footer />
+      {isAuthenticated && <Footer />}
     </div>
   );
 };
