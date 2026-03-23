@@ -28,9 +28,7 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-1 text-xs text-gray-400">
-            <span>Built with</span>
-            <Heart size={12} className="text-red-400 fill-red-400" />
-            <span>using React, Node.js & PostgreSQL</span>
+            <span>MealMuse © 2026</span>
           </div>
 
           <div className="flex items-center gap-3">
