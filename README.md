@@ -155,7 +155,7 @@ recipe-app/
 ---
 
 ### Note
-The application's functionality is limited due to the API restriction of 150 requests; once this limit is reached, the application will no longer operate.
+The application's functionality is limited due to the API restriction; once this limit is reached, the application will no longer operate.
 
 ## 👤 Author
 
