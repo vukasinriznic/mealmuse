@@ -154,7 +154,7 @@ recipe-app/
 
 ---
 
-### Note
+## ❗ Note
 The application's functionality is limited due to the API restriction; once this limit is reached, the application will no longer operate.
 
 ## 👤 Author
