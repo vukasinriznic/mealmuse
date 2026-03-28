@@ -6,8 +6,12 @@ import toast from 'react-hot-toast';
 
 const getWeekDates = () => {
   const today = new Date();
+  const day = today.getDay();
+  const diff = day === 0 ? -6 : 1 - day;
   const monday = new Date(today);
-  monday.setDate(today.getDate() - today.getDay() + 1);
+  monday.setDate(today.getDate() + diff);
+  monday.setHours(0, 0, 0, 0);
+
   return Array.from({ length: 7 }, (_, i) => {
     const date = new Date(monday);
     date.setDate(monday.getDate() + i);
