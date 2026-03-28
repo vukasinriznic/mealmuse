@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes';
 import recipeRoutes from './routes/recipeRoutes';
-import mealPlanRoutes from './routes/mealplanRoutes';
+import mealPlanRoutes from './routes/mealPlanRoutes';
 
 dotenv.config();
 
