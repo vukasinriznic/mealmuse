@@ -21,7 +21,10 @@ const getWeekDates = () => {
 
 const ShoppingListPage = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  const [checked, setChecked] = useState<Set<string>>(new Set());
+    const [checked, setChecked] = useState<Set<string>>(() => {
+    const saved = localStorage.getItem('shoppingListChecked');
+    return saved ? new Set(JSON.parse(saved)) : new Set();
+  });
   const [loading, setLoading] = useState(true);
 
   const loadShoppingList = async () => {
@@ -81,6 +84,7 @@ const ShoppingListPage = () => {
       newChecked.add(name);
     }
     setChecked(newChecked);
+    localStorage.setItem('shoppingListChecked', JSON.stringify([...newChecked]));
   };
 
   const uncheckedItems = ingredients.filter((i) => !checked.has(i.name));
