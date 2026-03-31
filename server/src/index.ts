@@ -18,7 +18,8 @@ app.use(cors({
     'http://localhost:5173',
     'https://recipe-app-tau-gold-49.vercel.app',
     'https://recipe-app-git-main-vukasinriznics-projects.vercel.app',
-    'https://mealmuse.vercel.app', // dodaj i custom domen ako imaš
+    'https://mealmuse.vercel.app',
+    'https://mealmuserecipe.vercel.app'
   ],
   credentials: true,
 }));
