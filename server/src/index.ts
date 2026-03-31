@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://recipe-app-tau-gold-49.vercel.app'
+    'https://recipe-app-tau-gold-49.vercel.app',
+    'https://recipe-app-git-main-vukasinriznics-projects.vercel.app',
+    'https://mealmuse.vercel.app', // dodaj i custom domen ako imaš
   ],
   credentials: true,
 }));
