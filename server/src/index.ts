@@ -7,6 +7,9 @@ import mealPlanRoutes from './routes/mealPlanRoutes';
 
 dotenv.config();
 
+console.log('DATABASE_URL exists:', !!process.env.DATABASE_URL);
+console.log('JWT_SECRET exists:', !!process.env.JWT_SECRET);
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
