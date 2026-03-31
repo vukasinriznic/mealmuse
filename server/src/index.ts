@@ -5,7 +5,8 @@ import authRoutes from './routes/authRoutes';
 import recipeRoutes from './routes/recipeRoutes';
 import mealPlanRoutes from './routes/mealPlanRoutes';
 
-dotenv.config();
+// dotenv.config();
+dotenv.config({ override: false });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
