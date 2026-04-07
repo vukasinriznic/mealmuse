@@ -152,6 +152,10 @@ recipe-app/
 └── README.md
 ```
 
+## 🔗 Live Demo
+
+👉 [View Live Site](https://mealmuserecipe.vercel.app)
+
 ---
 
 ## ❗ Note
