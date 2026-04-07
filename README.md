@@ -152,7 +152,7 @@ recipe-app/
 └── README.md
 ```
 
-## 🔗 Live Demo
+## 🔗 Live Site
 
 👉 [View Live Site](https://mealmuserecipe.vercel.app)
 
