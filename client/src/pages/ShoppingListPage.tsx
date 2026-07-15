@@ -147,7 +147,7 @@ const ShoppingListPage = () => {
             <div className="mb-6 p-4 rounded-2xl" style={{ background: 'white', boxShadow: '0 4px 15px rgba(0,0,0,0.06)' }}>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-gray-600">Progress</span>
-                <span className="text-sm font-bold text-green-600">{checked.size}/{ingredients.length}</span>
+                <span className="text-sm font-bold text-green-600">{checkedItems.length}/{ingredients.length}</span>
               </div>
               <div className="w-full h-2 rounded-full bg-gray-100">
                 <div
