@@ -40,7 +40,8 @@ const isColdStart = (status?: number, contentType?: string): boolean => {
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-async function handleRetry(error: AxiosError): Promise<unknown> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function handleRetry(error: AxiosError): Promise<any> {
   const config = error.config as RetryConfig | undefined;
   if (!config) return Promise.reject(error);
 
